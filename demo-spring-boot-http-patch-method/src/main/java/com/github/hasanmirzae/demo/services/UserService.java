@@ -18,8 +18,6 @@ public class UserService {
         User updated = repository.findById(user.getId());
         if (updated == null)
             throw new UserNotFoundException("User does not exits");
-        if (user.getUpdatingFields() == null || user.getUpdatingFields().isEmpty())
-            throw new IllegalArgumentException("Updating field names are not defined");
         updated.patchBy(user);
         return repository.save(updated);
     }
