@@ -2,35 +2,24 @@ package com.github.hasanmirzae.demo;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.hasanmirzae.demo.controllers.UserController;
 import com.github.hasanmirzae.demo.exceptions.UserNotFoundException;
 import com.github.hasanmirzae.demo.models.Profile;
 import com.github.hasanmirzae.demo.models.User;
 import com.github.hasanmirzae.demo.repository.UserRepository;
-import com.github.hasanmirzae.demo.services.UserService;
-import com.sun.deploy.security.ruleset.ExceptionRule;
 import org.hamcrest.core.IsInstanceOf;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoRule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.io.IOException;
@@ -38,13 +27,12 @@ import java.util.Arrays;
 
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.hamcrest.CoreMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
 @WebAppConfiguration()
 @SpringBootTest
-public class ApplicationTest {
+public class UserControllerIT {
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
