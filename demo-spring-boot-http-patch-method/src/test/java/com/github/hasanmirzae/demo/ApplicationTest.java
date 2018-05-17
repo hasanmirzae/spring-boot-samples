@@ -147,7 +147,6 @@ public class ApplicationTest {
     @Test
     public void shouldThrowUserNotFoundExceptionWhenIdNotDefined() throws Exception {
         thrown.expectCause(IsInstanceOf.instanceOf(UserNotFoundException.class));
-        thrown.expect(UserNotFoundException.class);
         // create a user instance
         User origin = new User();
         // perform update by PUT request
