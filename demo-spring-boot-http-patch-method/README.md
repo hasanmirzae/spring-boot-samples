@@ -3,16 +3,16 @@
 This demo application showing a solution to handle a **patch** method in a spring boot application.
 
 
-## How run unit tests
+## How to run unit tests
 ```
  $ mvn test
 ```
 
-## How run integration tests
+## How to run integration tests
 ```
  $ mvn integration-test
 ```
-## How build and run all tests
+## How to build and run all tests
 ```
  $ mvn clean install
 ```
