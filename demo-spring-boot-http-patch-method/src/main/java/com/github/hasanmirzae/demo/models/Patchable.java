@@ -33,7 +33,7 @@ public abstract class Patchable {
      * Update partially current object with source object.
      * Only those fields of the destination object would be updated that are mentioned in updatingFields of the source object.
      * @param obj source object with which current object will be updated
-     * @throws IllegalAccessException if updatingFields are empty
+     * @throws IllegalStateException if updatingFields are empty
      */
     public void patchBy(Patchable obj) {
         if (obj.getUpdatingFields() == null || obj.getUpdatingFields().isEmpty())

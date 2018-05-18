@@ -15,10 +15,10 @@ public class UserService {
     }
 
     public User patchUser(User user) throws UserNotFoundException {
-        User updated = repository.findById(user.getId());
-        if (updated == null)
-            throw new UserNotFoundException("User does not exits");
-        updated.patchBy(user);
-        return repository.save(updated);
+        User toBeUpdated = repository.findById(user.getId());
+        if (toBeUpdated == null)
+            throw new UserNotFoundException("User does not exist");
+        toBeUpdated.patchBy(user);
+        return repository.save(toBeUpdated);
     }
 }
