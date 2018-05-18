@@ -1,7 +1,7 @@
 # Demo spring boot application with http patch method
 
 This demo application showing a solution to handle a **patch** method in a spring boot application.
-
+You can create, get, update, patch and delete users.
 
 ## How to run unit tests
 ```
